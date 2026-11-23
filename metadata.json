@@ -1,0 +1,6 @@
+{
+  "name": "Panda Climb",
+  "description": "A vibrant 3D arcade platformer starring a nimble panda climbing steel-and-bamboo towers, dodging rolling barrels, grabbing power-ups, and conquering challenging multi-tier levels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
