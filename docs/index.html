@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panda Climb — 3D Arcade Platformer for Android</title>
+  <meta
+    name="description"
+    content="Panda Climb is a vibrant 3D OpenGL ES 2.0 arcade platformer for Android featuring 5 challenging towers, power-ups, combo multipliers, and 100% local Room persistence."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <img src="assets/panda-hero.jpg" alt="Panda Climb icon" />
+        <span>Panda Climb</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#towers">Towers</a>
+        <a href="#powerups">Power-Ups</a>
+        <a href="#tech">Tech &amp; Privacy</a>
+      </nav>
+      <a href="#build" class="btn btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Android 3D Arcade Platformer</div>
+          <h1>Climb High. Smash Barrels. <span>Save Red Panda!</span></h1>
+          <p>
+            A modern 3D twist on classic Donkey Kong tower-climbing action. Leap across slanted
+            bamboo-and-steel girders, stack <strong>x5 Jump-Over Combos</strong>, wield the Golden
+            Bamboo Hammer, and outsmart Mecha-Kong across 5 vibrant 3D biomes.
+          </p>
+          <div class="hero-actions">
+            <a href="#towers" class="btn btn-primary">Explore the 5 Towers</a>
+            <a href="#powerups" class="btn btn-secondary">Power-Ups &amp; Combos</a>
+          </div>
+          <div class="hero-badges">
+            <span class="chip">OpenGL ES 2.0 3D Engine</span>
+            <span class="chip">60 Hz Precision Physics</span>
+            <span class="chip">100% Offline Local Saves</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="showcase-card">
+            <img src="assets/panda-hero.jpg" alt="Heroic Panda wielding a golden bamboo hammer" />
+            <div class="showcase-meta">
+              <div class="mini-stat">
+                <strong>5</strong>
+                <span>3D Towers</span>
+              </div>
+              <div class="mini-stat">
+                <strong>4</strong>
+                <span>Power-Ups</span>
+              </div>
+              <div class="mini-stat">
+                <strong>15 ★</strong>
+                <span>Mastery Stars</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="towers">
+      <div class="container">
+        <div class="section-header">
+          <h2>5 Escalating 3D Towers</h2>
+          <p>
+            Each tower introduces new vertical platforming mechanics, distinct 3D atmospheric lighting,
+            and higher-stakes barrel barrages.
+          </p>
+        </div>
+
+        <div id="tower-tabs" class="tower-tabs" role="tablist" aria-label="Tower selection"></div>
+
+        <div class="tower-panel">
+          <div>
+            <small id="tower-biome" class="font-display" style="font-weight:700; text-transform:uppercase;"></small>
+            <h3 id="tower-title" style="font-size:1.75rem; margin:4px 0 10px;"></h3>
+            <p id="tower-desc" style="color:var(--muted); margin-bottom:14px;"></p>
+            <p id="tower-mechanics" style="font-size:0.9rem; color:var(--text); font-weight:600;"></p>
+            <div class="tower-stats">
+              <div class="tower-stat-box">
+                <small>3-Star Target</small>
+                <strong id="tower-score"></strong>
+              </div>
+              <div class="tower-stat-box">
+                <small>Par Clear Time</small>
+                <strong id="tower-par"></strong>
+              </div>
+            </div>
+          </div>
+
+          <div id="tower-preview" class="tower-biome-preview">
+            <span id="tower-preview-label" style="font-size:0.8rem; font-weight:700; opacity:0.9;"></span>
+            <div class="girder-preview slope"></div>
+            <div class="girder-preview alt"></div>
+            <div class="girder-preview slope"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="powerups">
+      <div class="container">
+        <div class="section-header">
+          <h2>Power-Ups &amp; Skillful Platforming</h2>
+          <p>
+            Tight controls with coyote time, jump buffering, and variable jump height reward bold,
+            high-speed climbs.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon-badge" style="background:rgba(255,202,40,0.18); color:var(--gold);">🔨</div>
+            <h3>Bamboo Hammer</h3>
+            <p>
+              Spin-smash rolling barrels and Flame Spirits for <strong>+250 × combo</strong> points
+              with 3D debris bursts and screen shake.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge" style="background:rgba(46,229,157,0.18); color:var(--jade);">🪶</div>
+            <h3>Jade Plume</h3>
+            <p>
+              Sprout glowing jade wings for a <strong>mid-air Double Jump</strong>—cross crumbling gaps
+              and take risky shortcuts.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge" style="background:rgba(41,212,255,0.18); color:var(--cyan);">🛡️</div>
+            <h3>Lotus Shield</h3>
+            <p>
+              Wraps Panda in rotating cyan lotus rings that absorb one hazard impact in a protective
+              shockwave.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge" style="background:rgba(255,61,87,0.18); color:var(--crimson);">🌶️</div>
+            <h3>Blaze Chili</h3>
+            <p>
+              Supercharges run and climb speed by 42% while magnetically pulling nearby Golden Bamboo
+              Shoots.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech">
+      <div class="container">
+        <div class="section-header">
+          <h2>Built for Smooth 60 FPS &amp; Privacy</h2>
+          <p>Modern native Android engineering with zero external tracking or account gates.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Native OpenGL ES 2.0</h3>
+            <p>
+              Procedural VBO geometry, Blinn-Phong + Fresnel rim shaders, dynamic tracking camera,
+              and GC-free matrix math run directly inside Compose via <code>GLSurfaceView</code>.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Procedural Synth Audio</h3>
+            <p>
+              Synthesizes jump sweeps, spring bounces, power-up fanfares, and barrel smashes live on
+              <code>AudioTrack</code> without large bundled audio files.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>On-Device Room Database</h3>
+            <p>
+              All tower unlocks, star ratings, high scores, nicknames, and career stats stay privately
+              on your phone in local SQLite storage—no login or cloud upload.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="build">
+      <div class="container">
+        <div class="banner">
+          <div>
+            <h2 style="font-size:1.9rem; margin-bottom:10px;">Build &amp; Publish from Source</h2>
+            <p style="color:var(--muted);">
+              Clone the Android project (API 24–36, Kotlin + Jetpack Compose + Room + KSP), run the
+              simulation unit tests, or publish this <code>/docs</code> folder directly on GitHub Pages.
+            </p>
+          </div>
+          <div class="code-box">
+            <div>$ gradle :app:assembleDebug</div>
+            <div>$ gradle :app:testDebugUnitTest --tests "com.example.GameSimulationTest"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span><strong>Panda Climb</strong> — Kotlin · Jetpack Compose · OpenGL ES 2.0 · Room</span>
+      <span>Privacy: 100% local on-device storage · Zero telemetry</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
